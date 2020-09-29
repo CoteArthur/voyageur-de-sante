@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+
+    targetNamespace="http://myGame/voyageur_de_sante"
+    xmlns:vds="http://myGame/voyageur_de_sante"
+>
+    <xs:element name="cabinet" type="vds:Cabinet"/>
+
+    <xs:complexType name="Cabinet">
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="adresse" type="vds:Adresse"/>
+            <xs:element name="infirmiers" type="vds:Infirmiers"/>
+            <xs:element name="patients" type="vds:Patients"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Adresse">
+        <xs:sequence>
+            <xs:element name="etage" type="xs:integer" minOccurs="0"/>
+            <xs:element name="numéro" type="xs:integer"/>
+            <xs:element name="rue" type="xs:string"/>
+            <xs:element name="ville" type="xs:string"/>
+            <xs:element name="codePostal" type="vds:CodePostal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="CodePostal">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{5}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Infirmiers">
+        <xs:sequence>
+            <xs:element name="infirmier" type="vds:Infirmier" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Infirmier">
+        <xs:sequence>
+            <xs:element name="nom" type="vds:Nom"/>
+            <xs:element name="prénom" type="vds:Nom"/>
+            <xs:element name="photo" type="vds:Photo"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="vds:Id"/>
+    </xs:complexType>
+
+    <xs:simpleType name="Nom">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([a-zA-Zéàèùâêîôû\-])*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Photo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([a-zA-Z\-._])*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Id">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9]){3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Patients">
+        <xs:sequence>
+            <xs:element name="patient" type="vds:Patient" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Patient">
+        <xs:sequence>
+            <xs:element name="nom" type="vds:Nom"/>
+            <xs:element name="prénom" type="vds:Nom"/>
+            <xs:element name="sexe" type="vds:Sexe" maxOccurs="0"/>
+            <xs:element name="naissance" type="xs:date"/>
+            <xs:element name="numéro" type="xs:integer"/>
+            <xs:element name="adresse" type="vds:Adresse"/>
+            <xs:element name="visite" type="vds:Visite"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="vds:Id"/>
+    </xs:complexType>
+
+    <xs:simpleType name="Sexe">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[MF]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Visite">
+        <xs:sequence>
+            <xs:element name="acte" type="vds:Acte"/>
+        </xs:sequence>
+        <xs:attribute name="date" type="xs:date"/>
+        <xs:attribute name="intervenant" type="vds:Id"/>
+    </xs:complexType>
+
+    <xs:complexType name="Acte">
+        <xs:attribute name="id" type="vds:Id"/>
+    </xs:complexType>
+
+</xs:schema>
