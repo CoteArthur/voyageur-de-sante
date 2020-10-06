@@ -82,9 +82,9 @@ and open the template in the editor.
         <xs:sequence>
             <xs:element name="nom" type="vds:Nom"/>
             <xs:element name="prénom" type="vds:Nom"/>
-            <xs:element name="sexe" type="vds:Sexe" maxOccurs="0"/>
+            <xs:element name="sexe" type="vds:Sexe"/>
             <xs:element name="naissance" type="xs:date"/>
-            <xs:element name="numéro" type="xs:integer"/>
+            <xs:element name="numéro" type="vds:Numéro"/>
             <xs:element name="adresse" type="vds:Adresse"/>
             <xs:element name="visite" type="vds:Visite"/>
         </xs:sequence>
@@ -94,6 +94,13 @@ and open the template in the editor.
     <xs:simpleType name="Sexe">
         <xs:restriction base="xs:string">
             <xs:pattern value="[MF]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Numéro">
+        <xs:restriction base="xs:integer">
+            <!-- TODO -->
+            <!-- <xs:pattern value="[MF]"/> -->
         </xs:restriction>
     </xs:simpleType>
 

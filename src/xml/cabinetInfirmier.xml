@@ -9,7 +9,7 @@ and open the template in the editor.
 <cabinet
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
     xmlns='http://myGame/voyageur_de_sante'
-    xsi:schemaLocation='http://myGame/voyageur_de_sante file:/home/c/cotear/Documents/LangagePourLeWeb/voyageur-de-sante/src/xml/cabinetInfirmier.xsd'>
+    xsi:schemaLocation='http://myGame/voyageur_de_sante cabinetInfirmier.xsd'>
 
     <nom>
         Soins à Grenoble
