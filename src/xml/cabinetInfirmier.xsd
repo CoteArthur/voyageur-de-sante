@@ -26,7 +26,7 @@ and open the template in the editor.
     <xs:complexType name="Adresse">
         <xs:sequence>
             <xs:element name="etage" type="xs:integer" minOccurs="0"/>
-            <xs:element name="numéro" type="xs:integer"/>
+            <xs:element name="numéro" type="xs:integer" minOccurs="0"/>
             <xs:element name="rue" type="xs:string"/>
             <xs:element name="ville" type="xs:string"/>
             <xs:element name="codePostal" type="vds:CodePostal"/>
