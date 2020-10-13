@@ -51,7 +51,7 @@ and open the template in the editor.
                 <ville>Grenoble</ville>
                 <codePostal>38031</codePostal>
             </adresse>
-            <visite date="2015-12-08" intervenant="001">
+            <visite date="2015-12-03" intervenant="001">
                 <acte id="109"/>
             </visite>
         </patient>
@@ -66,7 +66,7 @@ and open the template in the editor.
                 <ville>La Tronche</ville>
                 <codePostal>38700</codePostal>
             </adresse>
-            <visite date="2015-12-08">
+            <visite date="2015-12-02" intervenant="001">
                 <acte id="300"/>
             </visite>
         </patient>
@@ -77,11 +77,11 @@ and open the template in the editor.
             <naissance>1975-03-25</naissance>
             <numéro>275037306569295</numéro>
             <adresse>
-                <rue>rue Casimir Brenier</rue>
+                <rue>Casimir Brenier</rue>
                 <ville>Grenoble</ville>
                 <codePostal>38000</codePostal>
             </adresse>
-            <visite date="2015-12-08">
+            <visite date="2015-12-01" intervenant="001">
                 <acte id="101"/>
             </visite>
         </patient>
@@ -97,7 +97,7 @@ and open the template in the editor.
                 <ville>Grenoble</ville>
                 <codePostal>38042</codePostal>
             </adresse>
-            <visite date="2015-12-08">
+            <visite date="2015-12-08" intervenant="002">
                 <acte id="111"/>
             </visite>
         </patient>
